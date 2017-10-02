@@ -1,0 +1,20 @@
+function makeArrayConsecutive2(statues) {
+  //create vars that contain the max and min numbers of inputted array
+  var max = Math.max.apply(null, statues);
+  var min = Math.min.apply(null, statues);
+
+//push the numbers between the min and max to an array newArray using while loop
+  var newArray = [];
+  while (min < max + 1) {
+    newArray.push(min++);
+  }
+//create var that contains numbers unique to newArray
+  var unique = newArray.filter(function(item) {
+    return statues.indexOf(item) == -1;
+  });
+//return length of newArray/number of numbers that are unique to newArray
+  return unique.length;
+  
+} //end of makeArrayConsecutive2 function
+
+makeArrayConsecutive2([6, 2, 3, 8]);
